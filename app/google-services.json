@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "769382758279",
+    "firebase_url": "https://avnpost-8a624.firebaseio.com",
+    "project_id": "avnpost-8a624",
+    "storage_bucket": "avnpost-8a624.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769382758279:android:7f27b86f9ab070ea194522",
+        "android_client_info": {
+          "package_name": "avnpost.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769382758279-ovv8ut20bbfaam3hgm6multero4keoa6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "avnpost.com",
+            "certificate_hash": "e96918edd20ff416b3d31431657272226842de3a"
+          }
+        },
+        {
+          "client_id": "769382758279-4rg91abvlg8ko3lhks82omgn208b9sgi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlrEE0AeG1YDOP97wYM62JMUxJKBehqCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769382758279-4rg91abvlg8ko3lhks82omgn208b9sgi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

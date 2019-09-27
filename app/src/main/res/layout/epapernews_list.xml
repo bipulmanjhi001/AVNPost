@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_margin="10sp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="left"
+                android:textSize="12sp"
+                android:text="पुणे। हरियाण स्टीलर्स टीम आज प्रो कबड्डी लीग (पीकेएल) के सातवें सीजन के अपने अगले मैच में तमिल थलाइवाज के खिलाफ मैट पर उतरेगी। अपने पिछले मैच में जयपुर पिंक पैंथर्स को अंतिम मिनट में हासिल अंक के दम पर बराबरी पर रोकने वाली स्टीलर्स टीम थलाइवाज के खिलाफ भी अपना शानदार प्रदर्शन जारी रखना चाहेगी। हरियाणा के रेडर विकास कंडोला इस सीजन में अपनी टीम के सबसे अहम खिलाड़ी बनकर उभरे हैं।"
+                android:lines="10"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_gravity="left"
+                android:background="@drawable/select_button"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:padding="10sp"
+                android:text="Read More"
+                android:layout_height="35sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_margin="6sp"
+            android:background="@drawable/select_button"
+            android:layout_height="150sp" />
+
+    </LinearLayout>
+</LinearLayout>

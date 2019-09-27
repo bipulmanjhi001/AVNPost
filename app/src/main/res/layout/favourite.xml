@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginTop="20sp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/Clear_click"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:text="Clear"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10sp"
+            android:textSize="12sp"
+            android:background="@drawable/select_button"
+            android:layout_height="36dp"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:id="@+id/bussiness_new_list"
+        android:layout_height="30dp" />
+
+    <ListView
+        android:id="@+id/lv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
