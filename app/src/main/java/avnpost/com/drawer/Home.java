@@ -55,8 +55,7 @@ public class Home extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.home, container, false);
 
         viewPager = (ViewPager)view.findViewById(R.id.viewPager);
@@ -71,6 +70,7 @@ public class Home extends Fragment {
         adapter.addFragment(new LifeStyleNews(),"लाइफ स्टाइल");
         adapter.addFragment(new VideoNews(),"मनोरंजन");
         adapter.addFragment(new EpaperNews(),"ई-पेपर");
+
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 

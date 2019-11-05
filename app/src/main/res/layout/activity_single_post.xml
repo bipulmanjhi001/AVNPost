@@ -166,33 +166,66 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_gravity="center"
+            android:gravity="center"
             android:orientation="horizontal"
             android:layout_margin="10sp"
             android:layout_height="wrap_content">
 
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="10sp"
+                android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/fb"
-                android:layout_width="wrap_content"
+                android:layout_width="50sp"
                 android:background="@drawable/fb_img"
                 android:layout_marginLeft="10sp"
                 android:layout_gravity="center"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="10sp"
+                android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/twit"
-                android:layout_width="wrap_content"
-                android:background="@drawable/tw_img"
+                android:layout_width="50sp"
+                android:background="@drawable/twit_img"
                 android:layout_marginLeft="10sp"
                 android:layout_gravity="center"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_margin="10sp"
+                android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/whats"
-                android:layout_width="wrap_content"
+                android:layout_width="50sp"
                 android:background="@drawable/what_img"
                 android:layout_marginLeft="10sp"
                 android:layout_gravity="center"
-                android:layout_height="wrap_content"/>
+                android:layout_height="50sp"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

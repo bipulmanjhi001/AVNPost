@@ -21,6 +21,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import avnpost.com.R;
 import avnpost.com.adapter.CustomListAdapter;
 import avnpost.com.classmodel.VideoDetails;
@@ -37,7 +39,7 @@ public class Video  extends Fragment {
     ArrayList<VideoDetails> videoDetailsArrayList;
     CustomListAdapter customListAdapter;
     String TAG="ChannelActivity";
-    String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCyUJTV1aAuT_Gk9f0i4-Zfw&maxResults=10&key=AIzaSyADrk6MJ-vkWakJgHJxnMe3LGOEvW9yFn8";
+    String URL="https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCyUJTV1aAuT_Gk9f0i4-Zfw&maxResults=50&key=AIzaSyADrk6MJ-vkWakJgHJxnMe3LGOEvW9yFn8";
 
     public Video() {
     }
@@ -95,6 +97,7 @@ public class Video  extends Fragment {
                         videoDetails.setVideoId(videoid);
                         videoDetailsArrayList.add(videoDetails);
                     }
+                    Collections.reverse(videoDetailsArrayList);
                     lvVideo.setAdapter(customListAdapter);
                     customListAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {

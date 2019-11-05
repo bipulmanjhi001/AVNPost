@@ -68,6 +68,7 @@ public class SpecialNews extends Fragment {
     LinearLayout sliderDotspanel;
     private ImageView[] dots;
     private int dotscount;
+
     public SpecialNews() {
     }
 

@@ -27,5 +27,7 @@
     <string name="update">Update</string>
     <string name="category">ex : Clothes</string>
     <string name="defaultText">Select</string>
+    <string name="msg_subscribed">Notification Subscribed Successfully</string>
+    <string name="msg_subscribe_failed">Notification Subscribed UnSuccessfully</string>
 
 </resources>

@@ -13,9 +13,8 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 public class MyFirebaseInstanceIDService extends FirebaseMessagingService {
     private static final String TAG = MyFirebaseInstanceIDService.class.getSimpleName();
 
-
     @Override
-    public void onNewToken(@NonNull String s) {
+    public void onNewToken(String s) {
         super.onNewToken(s);
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         storeRegIdInPref(refreshedToken);
@@ -33,6 +32,6 @@ public class MyFirebaseInstanceIDService extends FirebaseMessagingService {
         SharedPreferences pref = getApplicationContext().getSharedPreferences(Config.SHARED_PREF, 0);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("regId", token);
-        editor.commit();
+        editor.apply();
     }
 }

@@ -6,8 +6,11 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -103,6 +106,51 @@ public class SinglePost extends AppCompatActivity {
             }
         });
 
+        twit=(ImageView)findViewById(R.id.twit);
+        twit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_TEXT,title+" "+link);
+                PackageManager pm = view.getContext().getPackageManager();
+                List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
+                for (final ResolveInfo app : activityList) {
+                    if ("com.twitter.android.PostActivity".equals(app.activityInfo.name)) {
+                        final ActivityInfo activity = app.activityInfo;
+                        final ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
+                        shareIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+                        shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+                        shareIntent.setComponent(name);
+                        view.getContext().startActivity(shareIntent);
+                        break;
+                    }
+                }
+            }
+        });
+        fb=(ImageView)findViewById(R.id.fb);
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_TEXT,title+" "+link);
+                PackageManager pm = view.getContext().getPackageManager();
+                List<ResolveInfo> activityList = pm.queryIntentActivities(shareIntent, 0);
+                for (final ResolveInfo app : activityList) {
+                    if ((app.activityInfo.name).contains("facebook")) {
+                        final ActivityInfo activity = app.activityInfo;
+                        final ComponentName name = new ComponentName(activity.applicationInfo.packageName, activity.name);
+                        shareIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+                        shareIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
+                        shareIntent.setComponent(name);
+                        view.getContext().startActivity(shareIntent);
+                        break;
+                    }
+                }
+            }
+        });
+
         back=(ImageView)findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +212,7 @@ public class SinglePost extends AppCompatActivity {
             }
         });
     }
+
     public Uri getLocalBitmapUri(Bitmap bmp) {
         Uri bmpUri = null;
         try {
@@ -195,7 +244,10 @@ public class SinglePost extends AppCompatActivity {
                             image = obj.getString("image");
                             link = obj.getString("link");
                             news_title.setText(title);
-                            try {
+
+                            dates.setText(date);
+                            authors.setText(author_name);
+                            news_text.setText(content);try {
                                 Glide.with(SinglePost.this).load(image)
                                         .error(R.drawable.no_image_available)
                                         .centerCrop()
@@ -205,9 +257,6 @@ public class SinglePost extends AppCompatActivity {
                             }catch (IllegalArgumentException e){
                                 e.printStackTrace();
                             }
-                            dates.setText(date);
-                            authors.setText(author_name);
-                            news_text.setText(content);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

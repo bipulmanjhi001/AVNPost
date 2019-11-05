@@ -8,9 +8,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <permission android:name="avnpost.com.main.permission.C2D_MESSAGE"
+    <permission
+        android:name="avnpost.com.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+
+    <uses-permission android:name="avnpost.com.permission.C2D_MESSAGE" />
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <meta-data android:name="com.google.firebase.messaging.default_notification_icon"
@@ -29,10 +33,11 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:node="merge"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".main.VideoActivity"/>
-        <activity android:name=".main.SinglePost" />
+        <activity android:name=".main.SinglePost"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".main.NewsBoard"
             android:screenOrientation="portrait" />
@@ -47,14 +52,13 @@
         </activity>
 
         <!-- Firebase Notifications -->
-        <service android:name=".push.MyFirebaseMessagingService"
-            android:stopWithTask="false">
+        <service android:name="avnpost.com.push.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
-        <service android:name=".push.MyFirebaseInstanceIDService">
+        <service android:name="avnpost.com.push.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
